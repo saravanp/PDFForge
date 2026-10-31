@@ -1,0 +1,28 @@
+[project]
+name = "pdf-merger"
+version = "0.1.0"
+description = "PDF merger app with CLI and Desktop GUI"
+readme = "README.md"
+authors = [
+    { name = "Saravan Periyaswamy", email = "saravan@outlook.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "click>=8.5.0",
+    "pillow>=12.3.0",
+    "pypdf>=6.18.0",
+    "tkinterdnd2>=0.6.3",
+]
+
+[project.scripts]
+pdf-merger = "pdf_merger:main"
+pdf-merger-gui = "pdf_merger.gui:run_gui"
+
+[build-system]
+requires = ["uv_build>=0.12.10,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]

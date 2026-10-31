@@ -1,6 +1,6 @@
-# PDF Merger
+# PDFForge
 
-A PDF merger app in Python with both Command Line Interface (CLI) and Desktop Graphical User Interface (GUI). Merge images (JPEG, PNG, etc.) and PDFs into a single PDF.
+PDFForge is a Python app with both Command Line Interface (CLI) and Desktop Graphical User Interface (GUI). Merge images (JPEG, PNG, etc.) and PDFs into a single PDF.
 
 ## Features
 
@@ -22,23 +22,23 @@ uv sync
 
 ```bash
 # Merge images and PDFs
-uv run python -m pdf_merger file1.jpg file2.png file3.pdf -o merged.pdf
+uv run python -m pdf_forge file1.jpg file2.png file3.pdf -o merged.pdf
 
 # Use the installed entry point
-uv run pdf-merger file1.jpg file2.png file3.pdf -o merged.pdf
+uv run pdf-forge file1.jpg file2.png file3.pdf -o merged.pdf
 
 # Specify page size for image inputs
-uv run python -m pdf_merger *.jpg -o photos.pdf --page-size Letter
+uv run python -m pdf_forge *.jpg -o photos.pdf --page-size Letter
 
 # For help
-uv run pdf-merger --help
+uv run pdf-forge --help
 ```
 
 ### Desktop Graphical User Interface (GUI)
 
 ```bash
 # Launch the GUI
-uv run pdf-merger-gui
+uv run pdf-forge-gui
 ```
 
 **Note:** The GUI requires tkinter to be available on your system. On most Linux distributions, you may need to install `python3-tk` or equivalent package.
@@ -76,10 +76,10 @@ uv lock
 ## Project Structure
 
 ```
-pdf-merger/
+PDFForge/
 ├── src/
-│   └── pdf_merger/
-│       ├── __init__.py        # Core PDF merger logic
+│   └── pdf_forge/
+│       ├── __init__.py        # Core merging logic
 │       ├── __main__.py        # CLI entry point
 │       └── gui.py             # Desktop GUI implementation
 ├── tests/                     # Unit tests
@@ -90,7 +90,7 @@ pdf-merger/
 
 ## How It Works
 
-The PDF merger works by:
+PDFForge works by:
 1. Accepting input files (images or PDFs) via CLI arguments or GUI
 2. Converting images to PDF pages while preserving original dimensions
 3. Appending existing PDFs as-is

@@ -1,7 +1,7 @@
 [project]
-name = "pdf-merger"
+name = "pdf-forge"
 version = "0.1.0"
-description = "PDF merger app with CLI and Desktop GUI"
+description = "PDFForge app with CLI and Desktop GUI"
 readme = "README.md"
 authors = [
     { name = "Saravan Periyaswamy", email = "saravan@outlook.com" }
@@ -15,8 +15,8 @@ dependencies = [
 ]
 
 [project.scripts]
-pdf-merger = "pdf_merger:main"
-pdf-merger-gui = "pdf_merger.gui:run_gui"
+pdf-forge = "pdf_forge:main"
+pdf-forge-gui = "pdf_forge.gui:run_gui"
 
 [build-system]
 requires = ["uv_build>=0.12.10,<0.13.0"]

@@ -1,4 +1,4 @@
-"""Tests for pdf_merger."""
+"""Tests for pdf_forge."""
 from __future__ import annotations
 
 import subprocess
@@ -10,7 +10,7 @@ from pathlib import Path
 from PIL import Image
 from pypdf import PdfReader, PdfWriter
 
-from pdf_merger import image_to_pdf, merge_pdfs
+from pdf_forge import image_to_pdf, merge_pdfs
 
 
 def test_image_to_pdf():
@@ -86,7 +86,7 @@ def test_cli_smoke():
         Image.new("RGB", (100, 100), "yellow").save(img)
 
         result = subprocess.run(
-            [sys.executable, "-m", "pdf_merger", str(img), "-o", str(out)],
+            [sys.executable, "-m", "pdf_forge", str(img), "-o", str(out)],
             capture_output=True,
             text=True,
             check=False,
@@ -111,7 +111,7 @@ def test_cli_directory():
 
         # Pass directory as input; should process alphabetically
         result = subprocess.run(
-            [sys.executable, "-m", "pdf_merger", str(tmpdir), "-o", str(out)],
+            [sys.executable, "-m", "pdf_forge", str(tmpdir), "-o", str(out)],
             capture_output=True,
             text=True,
             check=False,

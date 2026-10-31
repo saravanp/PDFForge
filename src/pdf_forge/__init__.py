@@ -1,4 +1,4 @@
-"""PDF merger app."""
+"""PDFForge app."""
 from __future__ import annotations
 
 import argparse
@@ -92,10 +92,10 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description="Merge images and PDFs into a single PDF.",
         epilog="Examples:\n"
-               "  pdf-merger photo.jpg document.pdf -o merged.pdf\n"
-               "  pdf-merger ./images/ -o photos.pdf\n"
-               "  pdf-merger ./images/ ./documents/ -o combined.pdf\n"
-               "  pdf-merger './images/*' -o all_photos.pdf",
+               "  pdf-forge photo.jpg document.pdf -o merged.pdf\n"
+               "  pdf-forge ./images/ -o photos.pdf\n"
+               "  pdf-forge ./images/ ./documents/ -o combined.pdf\n"
+               "  pdf-forge './images/*' -o all_photos.pdf",
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     parser.add_argument("inputs", nargs="+", help="Input files/directories or '*' glob")

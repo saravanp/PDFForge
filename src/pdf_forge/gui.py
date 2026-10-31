@@ -1,5 +1,5 @@
 """
-Desktop GUI for PDF Merger using Tkinter with drag-and-drop support.
+Desktop GUI for PDFForge using Tkinter with drag-and-drop support.
 
 Supports:
 - Dragging files from the file system directly to the file list (requires tkinterdnd2)
@@ -21,7 +21,7 @@ import tkinter as tk
 from pathlib import Path
 from tkinter import filedialog, messagebox, ttk
 
-from pdf_merger import merge_pdfs
+from pdf_forge import merge_pdfs
 
 
 def get_file_type(filename: str) -> str:
@@ -30,12 +30,12 @@ def get_file_type(filename: str) -> str:
     return "pdf" if ext == ".pdf" else "image"
 
 
-class PDFMergerApp:
-    """Main GUI application for PDF merging with drag-and-drop reordering."""
+class PDFForgeApp:
+    """Main GUI application for PDFForge with drag-and-drop reordering."""
 
     def __init__(self, root: tk.Tk):
         self.root = root
-        self.root.title("PDF Merger")
+        self.root.title("PDFForge")
         self.root.geometry("900x700")
         self.root.minsize(700, 500)
 
@@ -94,7 +94,7 @@ class PDFMergerApp:
 
         tk.Label(
             title_bar,
-            text="PDF Merger",
+            text="PDFForge",
             font=("Segoe UI", 22, "bold") if os.name == "nt" else ("Helvetica", 22, "bold"),
             bg="#2c3e50",
             fg="white",
@@ -507,12 +507,12 @@ class PDFMergerApp:
 
 
 def run_gui():
-    """Launch the PDF Merger GUI."""
+    """Launch the PDFForge GUI."""
     if _dnd_available:
         root = TkinterDnD.Tk()
     else:
         root = tk.Tk()
-    PDFMergerApp(root)
+    PDFForgeApp(root)
     root.mainloop()
 
 

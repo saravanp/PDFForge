@@ -45,6 +45,8 @@ uv run pdf-forge-gui
 
 **Note:** The GUI requires tkinter to be available on your system. On most Linux distributions, you may need to install `python3-tk` or equivalent package.
 
+![PDFForge desktop GUI](docs/screenshots/gui.png)
+
 #### GUI Features:
 - Drag and drop files to reorder them
 - Add individual files or entire folders

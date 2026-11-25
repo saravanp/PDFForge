@@ -2,6 +2,8 @@
 
 PDFForge is a Python app with both Command Line Interface (CLI) and Desktop Graphical User Interface (GUI). Merge images (JPEG, PNG, etc.) and PDFs into a single PDF.
 
+**Distribution:** PDFForge is released as two separate packages: a desktop GUI app and a CLI executable. Both bundle Python, so users do not need Python installed. Packaged macOS builds target Apple Silicon (arm64).
+
 ## Features
 
 - Convert images (JPEG, PNG, GIF, BMP, TIFF, WebP) to PDF pages
@@ -60,6 +62,36 @@ uv run pdf-forge-gui
 | `--page-size` | Page size for image inputs: `A4` or `Letter` (default: `A4`) |
 | `-v, --verbose` | Show processing details |
 
+## Building
+
+The GUI and CLI are built as separate standalone applications with PyInstaller. Both bundle Python, so users do not need Python installed.
+
+See [BUILDING.md](BUILDING.md) for macOS, Linux, and Windows build instructions, testing steps, and release packaging.
+
+Build both apps in one command:
+
+```bash
+uv sync && uv run python scripts/build_apps.py
+```
+
+The `target` defaults to `all`. To build just one app, use `uv run python scripts/build_apps.py gui` or `uv run python scripts/build_apps.py cli`.
+
+### Run the built apps
+
+Artifacts are run from the repository root:
+
+| Platform | GUI | CLI |
+|----------|-----|-----|
+| macOS | `open dist/PDFForge.app` | `./dist/pdf-forge --help` |
+| Linux | `./dist/PDFForge/PDFForge` | `./dist/pdf-forge --help` |
+| Windows (PowerShell) | `.\dist\PDFForge\PDFForge.exe` | `.\dist\pdf-forge.exe --help` |
+
+On Linux, `dist/PDFForge/` is a directory containing the GUI executable and its `_internal/` support files; the executable is `dist/PDFForge/PDFForge`. The CLI is `dist/pdf-forge` and requires at least one `inputs` argument. Use `--help` for usage, or pass files, directories, or glob patterns:
+
+```bash
+./dist/pdf-forge file1.jpg file2.pdf -o merged.pdf
+```
+
 ## Development
 
 ```bash
@@ -82,8 +114,10 @@ PDFForge/
 │       ├── __init__.py        # Core merging logic
 │       ├── __main__.py        # CLI entry point
 │       └── gui.py             # Desktop GUI implementation
+├── scripts/                   # Standalone packaging build scripts
 ├── tests/                     # Unit tests
 ├── test_data/                 # Sample test files
+├── BUILDING.md                # Build, test, and release instructions
 ├── pyproject.toml             # Project configuration
 └── README.md                  # This file
 ```

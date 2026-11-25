@@ -42,6 +42,8 @@ Build PDFForge to create executables in `dist/` that bundle Python and its depen
 
 A build produces two separate PyInstaller outputs: a GUI executable and a CLI executable. No prebuilt binaries are committed; artifacts are generated locally with `scripts/build_apps.py`. PyInstaller does not cross-compile, so build on the target OS and architecture.
 
+**Note:** Builds and the GUI have been tested on macOS. Linux and Windows builds have not been tested.
+
 ### Requirements
 
 - [uv](https://github.com/astral-sh/uv)

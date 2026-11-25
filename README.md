@@ -2,6 +2,8 @@
 
 PDFForge is a Python app with both Command Line Interface (CLI) and Desktop Graphical User Interface (GUI). Merge images (JPEG, PNG, etc.) and PDFs into a single PDF.
 
+![PDFForge desktop GUI](docs/screenshots/gui.png)
+
 ## Features
 
 - Convert images (JPEG, PNG, GIF, BMP, TIFF, WebP) to PDF pages
@@ -13,6 +15,8 @@ PDFForge is a Python app with both Command Line Interface (CLI) and Desktop Grap
 ## Setup
 
 Install [uv](https://github.com/astral-sh/uv) to build PDFForge's GUI and CLI executables or run it from source. uv installs the required Python version automatically; the built executables do not need uv or Python.
+
+To build or run PDFForge from source, uv is the only manual installation needed on macOS and Windows. On Linux, the GUI also requires system Tk/X11 libraries, and building requires `binutils`.
 
 ```bash
 # macOS / Linux
@@ -177,8 +181,6 @@ uv run pdf-forge-gui
 ```
 
 **Note:** The GUI requires tkinter to be available on your system. On most Linux distributions, you may need to install `python3-tk` or equivalent package.
-
-![PDFForge desktop GUI](docs/screenshots/gui.png)
 
 #### GUI Features:
 - Drag and drop files to reorder them

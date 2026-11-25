@@ -8,7 +8,6 @@ PDFForge is a Python app with both Command Line Interface (CLI) and Desktop Grap
 
 - Convert images (JPEG, PNG, GIF, BMP, TIFF, WebP) to PDF pages
 - Merge PDFs and images in any order
-- Configurable page size for image inputs (A4 or Letter)
 - Drag-and-drop file reordering in GUI
 - Built with [uv](https://github.com/astral-sh/uv) and [pypdf](https://pypdf.readthedocs.io/)
 
@@ -166,9 +165,6 @@ uv run python -m pdf_forge file1.jpg file2.png file3.pdf -o merged.pdf
 # Use the installed entry point
 uv run pdf-forge file1.jpg file2.png file3.pdf -o merged.pdf
 
-# Specify page size for image inputs
-uv run python -m pdf_forge *.jpg -o photos.pdf --page-size Letter
-
 # For help
 uv run pdf-forge --help
 ```
@@ -185,7 +181,6 @@ uv run pdf-forge-gui
 #### GUI Features:
 - Drag and drop files to reorder them
 - Add individual files or entire folders
-- Move selected files up/down in the merge queue
 - Real-time status and progress indicators
 - File type identification (PDF/Image)
 - Output file location selection
@@ -196,7 +191,6 @@ uv run pdf-forge-gui
 |--------|-------------|
 | `inputs` | Input files/directories or '*' glob patterns |
 | `-o, --output` | Output PDF path (default: `merged.pdf`) |
-| `--page-size` | Page size for image inputs: `A4` or `Letter` (default: `A4`) |
 | `-v, --verbose` | Show processing details |
 
 ## Development

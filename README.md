@@ -8,7 +8,7 @@ PDFForge is a Python app with both Command Line Interface (CLI) and Desktop Grap
 
 - Convert images (JPEG, PNG, GIF, BMP, TIFF, WebP) to PDF pages
 - Merge PDFs and images in any order
-- Drag-and-drop file reordering in GUI
+- Add and reorder files by drag-and-drop in the GUI
 - Built with [uv](https://github.com/astral-sh/uv) and [pypdf](https://pypdf.readthedocs.io/)
 
 ## Setup
@@ -179,7 +179,7 @@ uv run pdf-forge-gui
 **Note:** The GUI requires tkinter to be available on your system. On most Linux distributions, you may need to install `python3-tk` or equivalent package.
 
 #### GUI Features:
-- Drag and drop files to reorder them
+- Drag and drop files to add and reorder them
 - Add individual files or entire folders
 - Real-time status and progress indicators
 - File type identification (PDF/Image)
